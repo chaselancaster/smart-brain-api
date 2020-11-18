@@ -1,3 +1,4 @@
+
 const handleRegister = (req, res) => {
     const { email, name, password } = req.body;
     const hash = bcrypt.hashSync(password);

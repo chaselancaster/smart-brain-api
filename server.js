@@ -43,7 +43,7 @@ app.post('/signin', (req, res) => {
     .catch(err => res.status(400).json('wrong credentials'))
 })
 
-app.post('/register', register.handleRegister)
+app.post('/register', (req, res) => {register.handleRegister(req, res, db, brcypt)})
 
 app.get('/profile/:id', (req, res) => {
     const { id } = req.params;
